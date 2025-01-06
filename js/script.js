@@ -22,7 +22,7 @@ const threeA = document.getElementById("threeA")
 
 const fourA = document.getElementById("fourA")
 
-
+const fiveA = document.getElementById("fiveA")
 const fiveB = document.getElementById("fiveB")
 
 const sixA = document.getElementById("sixA")
@@ -61,7 +61,7 @@ btn.onclick = function(){
     } else{
         console.error("Неправильно")
     }
-    if(fiveB.checked){
+    if(fiveB.checked | fiveA.checked){
         score++
     } else{
         console.error("Неправильно")
@@ -92,22 +92,20 @@ btn.onclick = function(){
         console.error("Неправильно")
     }
     
-    if(score == 10){
+switch(true){
+    case score == 10:
         result.textContent = `Превосходно! Ты блестяще справился(лась) — все 10 из 10! Это просто великолепный результат!`;
-    }
-    else if(score >= 7 && score <= 9 ){
+        break;
+    case score >= 7 && score >= 9:
         result.textContent = `Очень хорошо! Ты набрал(а) ${score} из 10. Ты демонстрируешь отличный уровень знаний!`;
-
-    }
-    else if(score >= 4 && score < 7){
+        break;
+    case score >= 4 && score < 7:
         result.textContent = `Неплохо, ты набрал(а) ${score} из 10! Продолжай практиковаться, и ты сможешь добиться ещё лучших результатов!`;
-
-    }
-    else if(score >= 1 && score < 4){
+        break;
+    case score >= 1 && score < 4:
         result.textContent = `Тебе нужно повторить математику, так как ты набрал(а) всего ${score} из 10.`
-    }
-    else{
+        break;
+    default:
         result.textContent = `Ни одно задание не было решено правильно. Попробуйте ещё раз!`
-    }
-
+}
 }
