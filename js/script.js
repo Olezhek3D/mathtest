@@ -61,7 +61,7 @@ btn.onclick = function(){
     } else{
         console.error("Неправильно")
     }
-    if(fiveB.checked | fiveA.checked){
+    if(fiveB.checked || fiveA.checked){
         score++
     } else{
         console.error("Неправильно")
